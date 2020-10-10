@@ -1,28 +1,30 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>
-    <?php if (isset($title)) : ?>
-        <?= $title; ?>
-    <?php else :?>
-        Eh Oh Ciné !
-    <?php endif ?>    
-    </title>
+    <title><?= $title ?></title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    
 
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-  <a class="navbar-brand" href="/">Eh Oh Ciné !</a>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
-      <a class="nav-link" href="#">Liste des Films</a>
-      <a class="nav-link" href="#">Gestion des Films</a>
-    </div>
-  </div>
+
+<nav>
+<nav class="bg-white px-8 pt-2 shadow-md">
+     <div class="-mb-px flex justify-center">
+         <a class="no-underline text-teal-dark border-b-2 border-teal-dark uppercase tracking-wide font-bold text-xs py-3 mr-8" href="#">
+             Home
+         </a>
+         <a class="no-underline text-grey-dark border-b-2 border-transparent uppercase tracking-wide font-bold text-xs py-3 mr-8" href="#">
+             Products
+         </a>
+         <a class="no-underline text-grey-dark border-b-2 border-transparent uppercase tracking-wide font-bold text-xs py-3 mr-8" href="#">
+             Discounts
+         </a>
+         <a class="no-underline text-grey-dark border-b-2 border-transparent uppercase tracking-wide font-bold text-xs py-3" href="#">
+             Customers
+         </a>
+     </div>
 </nav>

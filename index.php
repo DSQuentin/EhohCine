@@ -1,17 +1,21 @@
 <?php
-use App\Connection;
+$title = "Accueil";
+$dsn = "mysql:host=servinfo-mariadb;dbname=DBdasilva";
+$user = "dasilva";
+$password = "dasilva";
 
-$title = Accueil;
-$pdo = Connection::getPDO();
-
-//$request = 'SELECT * FROM user';
-//$query = $file_db->prepare($request);
-//$query->execute(bdd.sql);
+$pdo = new PDO($dsn, $user, $password, [
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+]);
 
 
-require 'elements/header.php';
+$query = "SELECT * FROM FILM";
+$statement = $pdo->prepare($query);
+$statement->execute();
+$films = $statement->fetchAll();
+
+require "elements/header.php";
+
+
 ?>
-
-<h1>Test</h1>
-
-<?php require 'elements/footer.php'; ?>
