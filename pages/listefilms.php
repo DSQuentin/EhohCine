@@ -3,15 +3,15 @@
 use App\Autoloader;
 use App\Tables\Film;
 
-require './templates/header.php';
-require '../src/Autoloader.php';
+require_once '../src/Autoloader.php';
 Autoloader::register();
 
 $test = new Film();
 $films = $test->findAll();
+
 ?>
 
-<div class="album py-5 bg-light">
+<div class="album py-5">
     <div class="container">
         <h1 class="mb-5">Liste des films</h1>
         <div class="row">
@@ -22,9 +22,20 @@ $films = $test->findAll();
                         <div class="card-body">
                             <h5 class="card-title"><?= $film->nomfilm ?> (<?= $film->anneereal ?>)</h5>
                             <p class="card-text"><?= $film->nomreal . ' ' . $film->prenomreal ?></p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">
+                                <?php
+                                $string = $film->synopsis;
+                                $max = 100; // or 200, or whatever
+                                if(strlen($string) > $max) {
+                                    // find the last space < $max:
+                                    $shorter = substr($string, 0, $max+1);
+                                    $string = substr($string, 0, strrpos($shorter, ' ')).' ...';
+                                }
+                                echo $string;
+                                ?>
+                            </p>
                             <div class="d-flex justify-content-end">
-                                <a href="/pages/film.php&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
+                                <a href="/public/index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
                             </div>
                         </div>
                     </div>
@@ -38,4 +49,3 @@ $films = $test->findAll();
 
 
 
-<?php require './templates/footer.php'; ?>

@@ -31,7 +31,7 @@ class Film extends Database {
     public function findById($id)
     {
         $query =
-                    "SELECT film.id, nomfilm, anneereal, synopsis, nomreal, prenomreal, nomgenre, urlaffiche
+                    "SELECT film.id, nomfilm, anneereal, synopsis, nomreal, prenomreal, nomgenre, urlaffiche, real_id
                     FROM film
                     INNER JOIN realisateur
                     ON film.real_id = realisateur.id
@@ -40,7 +40,7 @@ class Film extends Database {
                     WHERE film.id = ?";
         $req = $this->getPDO()->prepare($query);
         $req->execute([$id]);
-        return $req->fetchAll();
+        return $req->fetch();
     }
 
     public function findByRealId($id)
@@ -70,7 +70,7 @@ class Film extends Database {
                     WHERE film.genre_id = ?";
         $req = $this->getPDO()->prepare($query);
         $req->execute([$id]);
-        return $req->fetchAll();
+        return $req->fetch();
     }
 
     public function find3Last()
@@ -118,4 +118,5 @@ class Film extends Database {
     {
         return '/pages/film.php?id=' . $this->id;
     }
+
 }

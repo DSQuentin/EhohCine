@@ -3,8 +3,7 @@
 use App\Autoloader;
 use App\Tables\Film;
 
-require './templates/header.php';
-require '../src/Autoloader.php';
+require_once '../src/Autoloader.php';
 Autoloader::register();
 
 $test = new Film();
@@ -18,7 +17,7 @@ $films = $test->find3Last();
     </div>
 </section>
 
-<div class="album py-5 bg-light">
+<div class="album py-5">
     <div class="container">
         <h1 class="mb-5">Les derniers films ajoutés</h1>
         <div class="row">
@@ -31,7 +30,7 @@ $films = $test->find3Last();
                             <p class="card-text"><?= $film->nomreal . ' ' . $film->prenomreal ?></p>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <div class="d-flex justify-content-end">
-                                <a href="/pages/film.php&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
+                                <a href="/public/index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
                             </div>
                         </div>
                     </div>
@@ -44,5 +43,3 @@ $films = $test->find3Last();
 
 
 
-
-<?php require './templates/footer.php'; ?>
