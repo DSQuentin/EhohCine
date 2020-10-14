@@ -6,6 +6,8 @@ use App\Tables\Film;
 require_once '../src/Autoloader.php';
 Autoloader::register();
 
+$title = 'Liste des films';
+
 $test = new Film();
 $films = $test->findAll();
 
@@ -25,7 +27,7 @@ $films = $test->findAll();
                             <p class="card-text">
                                 <?php
                                 $string = $film->synopsis;
-                                $max = 100; // or 200, or whatever
+                                $max = 130; // or 200, or whatever
                                 if(strlen($string) > $max) {
                                     // find the last space < $max:
                                     $shorter = substr($string, 0, $max+1);
