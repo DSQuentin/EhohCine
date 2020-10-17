@@ -32,7 +32,7 @@ $title = 'Ehoh Ciné | ' . $real->nomreal;
         <?php foreach ($listefilm as $film): ?>
             <div class="col-md-3 mt-4">
                 <div class="card mb-4 shadow-sm">
-                    <a href="/public/index.php?p=film&id=<?= $film->id ?>">
+                    <a href="index.php?p=film&id=<?= $film->id ?>">
                         <img src="<?= $film->urlaffiche ?>" class="card-img-top" alt="<?=  $film->nomfilm ?>">
                     </a>
                     <div class="card-body">
@@ -41,7 +41,7 @@ $title = 'Ehoh Ciné | ' . $real->nomreal;
                         <p class="card-text font-italic"><?= $film->nomgenre ?></p>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="d-flex justify-content-end">
-                            <a href="/public/index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
+                            <a href="index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
                         </div>
                     </div>
                 </div>

@@ -18,7 +18,7 @@ $title = 'Ehoh Ciné | ' . $film->nomfilm;
     <img class="rounded shadow-sm" src="<?= $film->urlaffiche ?>" alt="<?= $film->nomfilm ?> (<?= $film->anneereal ?>)" style="height: 350px">
     <div class="ml-4">
         <h1><?= $film->nomfilm ?> (<?= $film->anneereal ?>)</h1>
-        <p><a href="/public/index.php?p=realisateur&id=<?= $film->real_id ?>"><strong><?= $film->nomreal . ' ' . $film->prenomreal?></strong></a></p>
+        <p><a href="index.php?p=realisateur&id=<?= $film->real_id ?>"><strong><?= $film->nomreal . ' ' . $film->prenomreal?></strong></a></p>
         <p class="font-italic"><?= $film->nomgenre ?></p>
         <p><strong>Synopsis : </strong><br> <?= $film->synopsis ?></p>
     </div>
@@ -29,7 +29,7 @@ $title = 'Ehoh Ciné | ' . $film->nomfilm;
         <?php foreach ($filmsByGenre as $film): ?>
             <div class="col-md-3 mt-4">
                 <div class="card mb-4 shadow-sm">
-                    <a href="/public/index.php?p=film&id=<?= $film->id ?>">
+                    <a href="index.php?p=film&id=<?= $film->id ?>">
                         <img src="<?= $film->urlaffiche ?>" class="card-img-top" alt="<?=  $film->nomfilm ?>">
                     </a>
                     <div class="card-body">
@@ -38,7 +38,7 @@ $title = 'Ehoh Ciné | ' . $film->nomfilm;
                         <p class="card-text font-italic"><?= $film->nomgenre ?></p>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="d-flex justify-content-end">
-                            <a href="/public/index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
+                            <a href="index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
                         </div>
                     </div>
                 </div>

@@ -29,7 +29,7 @@ $title = 'Ajouter un réalisateur';
         <p class="alert alert-success">Votre réalisateur a bien été crée !</p>
     <?php endif ?>
     <h1>Ajouter un réalisateur</h1>
-    <form class="mt-4 mb-5" method="post" action="/public/index.php?p=createreal&create=1">
+    <form class="mt-4 mb-5" method="post" action="index.php?p=createreal&create=1">
         <div class="form-group">
             <label for="nomreal">Nom du réalisateur</label>
             <input type="text" class="form-control" id="nomreal" name="nomreal" placeholder="John, Stanley">
@@ -52,7 +52,7 @@ $title = 'Ajouter un réalisateur';
         </div>
         <div class="d-flex justify-content-between">
             <button class="btn btn-dark">Ajouter</button>
-            <a href="/public/index.php?p=gestionreals" class="btn btn-dark">Retour</a>
+            <a href="index.php?p=gestionreals" class="btn btn-dark">Retour</a>
         </div>
     </form>
 </div>

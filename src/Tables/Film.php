@@ -112,10 +112,26 @@ class Film extends Database {
                 ':real_id' => (int)$real_id,
                 ':urlaffiche' => $urlaffiche
             ]);
-            echo "\nPDOStatement::errorInfo():\n";
-            $arr = $req->errorInfo();
-            print_r($arr);
 
+    }
+
+    
+    //Update le film
+    public function updateFilm($id, $nomfilm, $anneereal, $synopsis, $genre_id, $real_id, $urlaffiche)
+    {
+        $query =
+                "UPDATE film
+                SET nomfilm = :nomfilm, anneereal = :anneereal, synopsis = :synopsis, genre_id = :genre_id, real_id = :real_id, urlaffiche = :urlaffiche
+                WHERE film.id = :id";
+            $req = $this->getPDO()->prepare($query);
+            $req->execute([
+                ':nomfilm' => $nomfilm,
+                ':anneereal' => $anneereal,
+                ':synopsis' => $synopsis,
+                ':genre_id' => $genre_id,
+                ':real_id' => $real_id,
+                ':urlaffiche' => $urlaffiche,
+                ':id' => $id]);
     }
 
     //Supprime le film dont l'id est passé en paramètre de la base de données

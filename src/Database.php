@@ -15,7 +15,7 @@ class Database {
     private $db_host;
     protected $pdo;
 
-    public function __construct($db_name = 'projetcine', $db_user = 'root', $db_pass = 'root', $db_host = 'localhost')
+    public function __construct($db_name = 'DBdasilva', $db_user = 'dasilva', $db_pass = 'dasilva', $db_host = 'servinfo-mariadb')
     {
         $this->db_name = $db_name;
         $this->db_user = $db_user;
@@ -29,7 +29,7 @@ class Database {
         // Si on n'est pas encore connecté, on se connecte, sinon on renvoie juste pdo pour éviter de faire pleins de connexions
         if($this->pdo === null){
             try {
-                $pdo = new PDO('mysql:dbname=projetcine;host=localhost', 'root', 'root', [
+                $pdo = new PDO('mysql:dbname=DBdasilva;host=servinfo-mariadb', 'dasilva', 'dasilva', [
                     PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Affichage d'erreur
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ // Les valeurs renvoyés d'une requete sont sous forme d'objets

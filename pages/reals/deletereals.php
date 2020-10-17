@@ -8,5 +8,5 @@ Autoloader::register();
 
 $reals = new Realisateur();
 $reals->deleteReal($_GET['id']);
-header('Location: /public/index.php?p=gestionreals&delete=1');
+header('Location: index.php?p=gestionreals&delete=1');
 

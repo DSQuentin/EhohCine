@@ -50,7 +50,7 @@ $title = 'Gestion des réalisateurs';
                     ?>
                 </td>
                 <td>
-                    <form action="/public/index.php?p=deletereals&id=<?= $real->id ?>" method="post" onsubmit="return confirm('Voulez vraiment effectuer cette action?')">
+                    <form action="index.php?p=deletereals&id=<?= $real->id ?>" method="post" onsubmit="return confirm('Voulez vraiment effectuer cette action?')">
                         <button type="submit" class="btn btn-danger">Supprimer</button>
                     </form>
                 </td>

@@ -17,6 +17,7 @@ $title = 'Gestion des films';
     <?php if(isset($_GET['delete']) && $_GET['delete'] === '1'): ?>
         <p class="alert alert-success">Votre film a bien été supprimé !</p>
     <?php endif ?>
+    
 
     <table class="table">
         <thead>
@@ -49,9 +50,10 @@ $title = 'Gestion des films';
                     ?>
                 </td>
                 <td>
-                    <form action="/public/index.php?p=deletefilms&id=<?= $film->id ?>" method="post" onsubmit="return confirm('Voulez vraiment effectuer cette action?')">
+                    <form action="index.php?p=deletefilms&id=<?= $film->id ?>" method="post" onsubmit="return confirm('Voulez vraiment effectuer cette action?')">
                         <button type="submit" class="btn btn-danger">Supprimer</button>
                     </form>
+                    <a href="index.php?p=updatefilms&id=<?= $film->id ?>" class="btn btn-dark">Edit</a>
                 </td>
             </tr>
         <?php endforeach ?>

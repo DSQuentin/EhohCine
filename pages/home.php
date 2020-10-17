@@ -33,7 +33,7 @@ $films = $test->find3Last();
             <?php foreach ($films as $film): ?>
             <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <a href="/public/index.php?p=film&id=<?= $film->id ?>"><img src="<?= $film->urlaffiche ?>" class="card-img-top" alt="<?=  $film->nomfilm ?>"></a>
+                        <a href="index.php?p=film&id=<?= $film->id ?>"><img src="<?= $film->urlaffiche ?>" class="card-img-top" alt="<?=  $film->nomfilm ?>"></a>
                         <div class="card-body">
                             <h5 class="card-title"><?= $film->nomfilm ?> (<?= $film->anneereal ?>)</h5>
                             <p class="card-text"><?= $film->nomreal . ' ' . $film->prenomreal ?></p>
@@ -52,7 +52,7 @@ $films = $test->find3Last();
                                 ?>
                             </p>
                             <div class="d-flex justify-content-end">
-                                <a href="/public/index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
+                                <a href="index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
                             </div>
                         </div>
                     </div>

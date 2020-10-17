@@ -43,9 +43,9 @@ if (isset($_GET['sort']) && $_GET['sort'] === 'nomfilm') {
                 </div>
                 <div class="col border-left">
                     <h1 class="mb-4">Trier</h1>
-                    <a href="/public/index.php?p=listefilms&sort=nomfilm" class="btn btn-dark">Par ordre alphabétique</a>
-                    <a href="/public/index.php?p=listefilms&sort=nomgenre" class="btn btn-dark">Par Genre</a>
-                    <a href="/public/index.php?p=listefilms&sort=nomreal" class="btn btn-dark">Par Realisateur</a>
+                    <a href="index.php?p=listefilms&sort=nomfilm" class="btn btn-dark">Par ordre alphabétique</a>
+                    <a href="index.php?p=listefilms&sort=nomgenre" class="btn btn-dark">Par Genre</a>
+                    <a href="index.php?p=listefilms&sort=nomreal" class="btn btn-dark">Par Realisateur</a>
                 </div>
             </div>
             <h1 class="mb-5">Liste des films</h1>
@@ -54,7 +54,7 @@ if (isset($_GET['sort']) && $_GET['sort'] === 'nomfilm') {
                     <?php foreach ($films as $film): ?>
                         <div class="col-md-3">
                             <div class="card mb-4 shadow-sm">
-                                <a href="/public/index.php?p=film&id=<?= $film->id ?>">
+                                <a href="index.php?p=film&id=<?= $film->id ?>">
                                     <img src="<?= $film->urlaffiche ?>" class="card-img-top" alt="<?=  $film->nomfilm ?>">
                                 </a>                                <div class="card-body">
                                     <h5 class="card-title"><?= $film->nomfilm ?> (<?= $film->anneereal ?>)</h5>
@@ -73,7 +73,7 @@ if (isset($_GET['sort']) && $_GET['sort'] === 'nomfilm') {
                                         ?>
                                     </p>
                                     <div class="d-flex justify-content-end">
-                                        <a href="/public/index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
+                                        <a href="index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
                                     </div>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@ if (isset($_GET['sort']) && $_GET['sort'] === 'nomfilm') {
                     <?php foreach ($filmssearched as $film): ?>
                         <div class="col-md-3">
                             <div class="card mb-4 shadow-sm">
-                                <a href="/public/index.php?p=film&id=<?= $film->id ?>">
+                                <a href="index.php?p=film&id=<?= $film->id ?>">
                                     <img src="<?= $film->urlaffiche ?>" class="card-img-top" alt="<?=  $film->nomfilm ?>">
                                 </a>
                                 <div class="card-body">
@@ -103,7 +103,7 @@ if (isset($_GET['sort']) && $_GET['sort'] === 'nomfilm') {
                                         ?>
                                     </p>
                                     <div class="d-flex justify-content-end">
-                                        <a href="/public/index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
+                                        <a href="index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
                                     </div>
                                 </div>
                             </div>

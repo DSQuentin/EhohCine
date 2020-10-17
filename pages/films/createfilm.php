@@ -31,7 +31,7 @@ $title = 'Ajouter un film';
     <p class="alert alert-success">Votre film a bien été crée !</p>
     <?php endif ?>
     <h1>Ajouter un film</h1>
-    <form class="mt-4 mb-5" method="post" action="/public/index.php?p=createfilm&create=1">
+    <form class="mt-4 mb-5" method="post" action="index.php?p=createfilm&create=1">
         <div class="form-group">
             <label for="nomfilm">Nom du film</label>
             <input type="text" class="form-control" id="nomfilm" name="nomfilm" placeholder="Jurassic Park, Star Wars ..." required>
@@ -52,7 +52,7 @@ $title = 'Ajouter un film';
                 <?php endforeach ?>
             </select>
             <p class="font-weight-light">Le genre ne figure pas dans cette liste ?
-                <a href="/public/index.php?p=creategenre">Cliquez ici</a>
+                <a href="index.php?p=creategenre">Cliquez ici</a>
             </p>
         </div>
         <div class="form-group">
@@ -63,7 +63,7 @@ $title = 'Ajouter un film';
                 <?php endforeach ?>
             </select>
             <p class="font-weight-light">Le réalisateur ne figure pas dans cette liste ?
-                <a href="/public/index.php?p=createreal">Cliquez ici</a>
+                <a href="index.php?p=createreal">Cliquez ici</a>
             </p>
         </div>
         <div class="form-group">

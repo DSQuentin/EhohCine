@@ -8,5 +8,5 @@ Autoloader::register();
 
 $films = new Film();
 $films->deleteFilm($_GET['id']);
-header('Location: /public/index.php?p=gestionfilms&delete=1');
+header('Location: index.php?p=gestionfilms&delete=1');
 

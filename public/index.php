@@ -41,7 +41,10 @@ if ($p === 'home') {
     require '../pages/genres/gestiongenres.php';
 }elseif ($p === 'deletegenres') {
     require '../pages/genres/deletegenres.php';
+} elseif ($p === 'updatefilms') {
+    require '../pages/films/updatefilms.php';
 }
+
 $content = ob_get_clean();
 
 require '../pages/templates/default.php';
