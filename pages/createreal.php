@@ -20,6 +20,8 @@ $listereals = $reals->findAll();
 if (isset($_POST['nomreal']) && isset($_POST['prenomreal']) && isset($_POST['naissancereal']) && isset($_POST['biographie']) && isset($_POST['urlphoto'])){
     $reals->insertReal($_POST['nomreal'],$_POST['prenomreal'], $_POST['naissancereal'], $_POST['biographie'], $_POST['urlphoto'] );
 }
+
+$title = 'Ajouter un réalisateur';
 ?>
 
 <div class="container">
@@ -50,7 +52,7 @@ if (isset($_POST['nomreal']) && isset($_POST['prenomreal']) && isset($_POST['nai
         </div>
         <div class="d-flex justify-content-between">
             <button class="btn btn-dark">Ajouter</button>
-            <a href="/public/index.php?p=createfilm" class="btn btn-dark">Retour</a>
+            <a href="/public/index.php?p=gestionreals" class="btn btn-dark">Retour</a>
         </div>
     </form>
 </div>

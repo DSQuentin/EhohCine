@@ -129,9 +129,50 @@ class Film extends Database {
         return $req->fetchAll();
     }
 
-    public function getUrl()
+    public function sortByName()
     {
-        return '/pages/film.php?id=' . $this->id;
+        $query =
+            "SELECT film.id, nomfilm, anneereal, synopsis, nomreal, prenomreal, nomgenre, urlaffiche
+                    FROM film
+                    INNER JOIN realisateur
+                    ON film.real_id = realisateur.id
+                    INNER JOIN genre
+                    ON film.genre_id = genre.id
+                    ORDER BY nomfilm";
+        $req = $this->getPDO()->prepare($query);
+        $req->execute();
+        return $req->fetchAll();
     }
+
+    public function sortByGenre()
+    {
+        $query =
+            "SELECT film.id, nomfilm, anneereal, synopsis, nomreal, prenomreal, nomgenre, urlaffiche
+                    FROM film
+                    INNER JOIN realisateur
+                    ON film.real_id = realisateur.id
+                    INNER JOIN genre
+                    ON film.genre_id = genre.id
+                    ORDER BY genre.nomgenre";
+        $req = $this->getPDO()->prepare($query);
+        $req->execute();
+        return $req->fetchAll();
+    }
+
+    public function sortByReal()
+    {
+        $query =
+            "SELECT film.id, nomfilm, anneereal, synopsis, nomreal, prenomreal, nomgenre, urlaffiche
+                    FROM film
+                    INNER JOIN realisateur
+                    ON film.real_id = realisateur.id
+                    INNER JOIN genre
+                    ON film.genre_id = genre.id
+                    ORDER BY realisateur.nomreal";
+        $req = $this->getPDO()->prepare($query);
+        $req->execute();
+        return $req->fetchAll();
+    }
+
 
 }

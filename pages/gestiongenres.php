@@ -13,8 +13,10 @@ $title = 'Gestion des genres';
 ?>
 
 <div class="container">
-    <h1>GESTION GENRES</h1>
-
+    <h1 class="mb-5">Gestion des genres</h1>
+    <?php if (isset($_GET['delete']) && $_GET['delete'] === '1'): ?>
+        <p class="alert alert-success">Votre genre a bien été supprimé !</p>
+    <?php endif ?>
     <table class="table">
         <thead>
         <tr>

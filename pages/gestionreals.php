@@ -13,7 +13,11 @@ $title = 'Gestion des réalisateurs';
 ?>
 
 <div class="container">
-    <h1>GESTION REALS</h1>
+    <h1 class="mb-5">Gestion des réalisateurs</h1>
+
+    <?php if (isset($_GET['delete']) && $_GET['delete'] === '1'): ?>
+    <p class="alert alert-success">Votre réalisateur a bien été supprimé !</p>
+    <?php endif ?>
 
     <table class="table">
         <thead>

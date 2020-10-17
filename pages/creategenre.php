@@ -18,6 +18,8 @@ $listereals = $reals->findAll();
 if (isset($_POST['nomgenre'])){
     $genres->insertGenre($_POST['nomgenre']);
 }
+
+$title = 'Ajouter un genre';
 ?>
 
 <div class="container">
@@ -32,7 +34,7 @@ if (isset($_POST['nomgenre'])){
         </div>
         <div class="d-flex justify-content-between">
             <button class="btn btn-dark">Ajouter</button>
-            <a href="/public/index.php?p=createfilm" class="btn btn-dark">Retour</a>
+            <a href="/public/index.php?p=gestiongenres" class="btn btn-dark">Retour</a>
         </div>
     </form>
 </div>

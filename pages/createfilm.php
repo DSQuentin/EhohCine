@@ -16,10 +16,7 @@ $listegenres = $genres->findAll();
 $reals = new Realisateur();
 $listereals = $reals->findAll();
 
-$test = (int)$_POST['annereal'];
-var_dump($test);
 var_dump($_POST);
-var_dump($_GET);
 
 
 if (isset($_POST['nomfilm']) && isset($_POST['annereal']) &&
@@ -27,6 +24,8 @@ if (isset($_POST['nomfilm']) && isset($_POST['annereal']) &&
     isset($_POST['nomreal']) && isset($_POST['urlaffiche'])){
         $films->insertFilm($_POST['nomfilm'], (int)$_POST['annereal'], $_POST['synopsis'], (int)$_POST['nomgenre'],(int)$_POST['nomreal'], $_POST['urlaffiche']);
 }
+
+$title = 'Ajouter un film';
 ?>
 
 <div class="container">

@@ -8,4 +8,4 @@ Autoloader::register();
 
 $genres = new Genre();
 $genres->deleteGenre($_GET['id']);
-header('Location: /public/index.php?p=gestionfilms&delete=3');
+header('Location: /public/index.php?p=gestiongenres&delete=1');
