@@ -114,6 +114,21 @@ class Film extends Database {
         $req->execute();
     }
 
+    public function researchByName($search)
+    {
+        $query =
+            "SELECT film.id, nomfilm, anneereal, synopsis, nomreal, prenomreal, nomgenre, urlaffiche, real_id
+                    FROM film
+                    INNER JOIN realisateur
+                    ON film.real_id = realisateur.id
+                    INNER JOIN genre
+                    ON film.genre_id = genre.id
+                    WHERE LOWER(nomfilm) LIKE :search";
+        $req = $this->getPDO()->prepare($query);
+        $req->execute([':search' => $search]);
+        return $req->fetchAll();
+    }
+
     public function getUrl()
     {
         return '/pages/film.php?id=' . $this->id;
