@@ -21,8 +21,11 @@ if (isset($_POST['nomgenre'])){
 ?>
 
 <div class="container">
+    <?php if(isset($_GET['create']) && $_GET['create'] === '1'): ?>
+        <p class="alert alert-success">Votre genre a bien été crée !</p>
+    <?php endif ?>
     <h1>Ajouter un genre</h1>
-    <form class="mt-4 mb-5" method="post">
+    <form class="mt-4 mb-5" method="post" action="/public/index.php?p=creategenre&create=1">
         <div class="form-group">
             <label for="nomgenre">Nom du genre</label>
             <input type="text" class="form-control" id="nomgenre" name="nomgenre" placeholder="Action, Comédie ...">

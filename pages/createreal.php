@@ -23,8 +23,11 @@ if (isset($_POST['nomreal']) && isset($_POST['prenomreal']) && isset($_POST['nai
 ?>
 
 <div class="container">
+    <?php if(isset($_GET['create']) && $_GET['create'] === '1'): ?>
+        <p class="alert alert-success">Votre réalisateur a bien été crée !</p>
+    <?php endif ?>
     <h1>Ajouter un réalisateur</h1>
-    <form class="mt-4 mb-5" method="post">
+    <form class="mt-4 mb-5" method="post" action="/public/index.php?p=createreal&create=1">
         <div class="form-group">
             <label for="nomreal">Nom du réalisateur</label>
             <input type="text" class="form-control" id="nomreal" name="nomreal" placeholder="John, Stanley">

@@ -28,6 +28,8 @@ if ($p === 'home') {
     require '../pages/createreal.php';
 } elseif ($p === 'creategenre'){
     require '../pages/creategenre.php';
+} elseif ($p === 'deletefilms'){
+    require '../pages/deletefilms.php';
 }
 
 $content = ob_get_clean();

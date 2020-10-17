@@ -89,19 +89,19 @@ class Film extends Database {
         return $req->fetchAll();
     }
 
-    public function insertFilm($nomfilm, $anneereal, $synopsis, $real_id, $genre_id, $urlaffiche)
+    public function insertFilm($nomfilm, $anneereal, $synopsis, $genre_id, $real_id, $urlaffiche)
     {
         $query =
             "INSERT INTO film (nomfilm, anneereal, synopsis, genre_id, real_id, urlaffiche)
             values (:nomfilm, :anneereal, :synopsis, :genre_id, :real_id, :urlaffiche)";
         $req = $this->getPDO()->prepare($query);
         $req->execute([
-            'nomfilm' => $nomfilm,
-            'anneereal' => $anneereal,
-            'synopsis' => $synopsis,
-            'genre_id' => $genre_id,
-            'real_id' => $real_id,
-            'urlaffiche' => $urlaffiche
+            ':nomfilm' => $nomfilm,
+            ':anneereal' => $anneereal,
+            ':synopsis' => $synopsis,
+            ':genre_id' => $genre_id,
+            ':real_id' => $real_id,
+            ':urlaffiche' => $urlaffiche
         ]);
     }
 

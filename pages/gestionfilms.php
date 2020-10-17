@@ -12,7 +12,11 @@ $listefilms = $films->findAll();
 $title = 'Gestion des films';
 ?>
 <div class="container mb-5">
-    <h1>GESTION FILMS</h1>
+    <h1 class="mb-5">GESTION FILMS</h1>
+
+    <?php if(isset($_GET['delete']) && $_GET['delete'] === '1'): ?>
+        <p class="alert alert-success">Votre réalisateur a bien été supprimé !</p>
+    <?php endif ?>
 
     <table class="table">
         <thead>
@@ -45,7 +49,9 @@ $title = 'Gestion des films';
                     ?>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-danger">Supprimer</button>
+                    <form action="/public/index.php?p=deletefilms&id=<?= $film->id ?>" method="post" onsubmit="return confirm('Voulez vraiment effectuer cette action?')">
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                    </form>
                 </td>
             </tr>
         <?php endforeach ?>

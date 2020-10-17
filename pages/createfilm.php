@@ -16,19 +16,25 @@ $listegenres = $genres->findAll();
 $reals = new Realisateur();
 $listereals = $reals->findAll();
 
+$test = (int)$_POST['annereal'];
+var_dump($test);
 var_dump($_POST);
+var_dump($_GET);
 
 
 if (isset($_POST['nomfilm']) && isset($_POST['annereal']) &&
     isset($_POST['synopsis']) && isset($_POST['nomgenre']) &&
     isset($_POST['nomreal']) && isset($_POST['urlaffiche'])){
-        $films->insertFilm($_POST['nomfilm'], $_POST['annereal'], $_POST['synopsis'], $_POST['nomgenre'],$_POST['nomreal'], $_POST['urlaffiche']);
+        $films->insertFilm($_POST['nomfilm'], (int)$_POST['annereal'], $_POST['synopsis'], (int)$_POST['nomgenre'],(int)$_POST['nomreal'], $_POST['urlaffiche']);
 }
 ?>
 
 <div class="container">
+    <?php if(isset($_GET['create']) && $_GET['create'] === '1'): ?>
+    <p class="alert alert-success">Votre film a bien été crée !</p>
+    <?php endif ?>
     <h1>Ajouter un film</h1>
-    <form class="mt-4 mb-5" method="post">
+    <form class="mt-4 mb-5" method="post" action="/public/index.php?p=createfilm&create=1">
         <div class="form-group">
             <label for="nomfilm">Nom du film</label>
             <input type="text" class="form-control" id="nomfilm" name="nomfilm" placeholder="Jurassic Park, Star Wars ..." required>
@@ -43,9 +49,9 @@ if (isset($_POST['nomfilm']) && isset($_POST['annereal']) &&
         </div>
         <div class="form-group">
             <label for="nomgenre">Genre</label>
-            <select multiple class="form-control" id="nomgenre" name="nomgenre" required>
+            <select class="form-control" id="nomgenre" name="nomgenre" required>
                 <?php foreach($listegenres as $genre): ?>
-                    <option id="<?= $genre->id ?>"><?= $genre->nomgenre ?></option>
+                    <option value="<?= $genre->id ?>"><?= $genre->nomgenre ?></option>
                 <?php endforeach ?>
             </select>
             <p class="font-weight-light">Le genre ne figure pas dans cette liste ?
@@ -54,9 +60,9 @@ if (isset($_POST['nomfilm']) && isset($_POST['annereal']) &&
         </div>
         <div class="form-group">
             <label for="nomreal">Réalisateur</label>
-            <select multiple class="form-control" id="nomreal" name="nomreal" required>
+            <select class="form-control" id="nomreal" name="nomreal" required>
                 <?php foreach($listereals as $real): ?>
-                    <option id="<?= $real->id ?>"><?= $real->nomreal . ' ' . $real->prenomreal ?></option>
+                    <option value="<?= $real->id ?>"><?= $real->nomreal . ' ' . $real->prenomreal ?></option>
                 <?php endforeach ?>
             </select>
             <p class="font-weight-light">Le réalisateur ne figure pas dans cette liste ?
