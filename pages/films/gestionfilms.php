@@ -34,7 +34,7 @@ $title = 'Gestion des films';
         <?php foreach ($listefilms as $film): ?>
             <tr>
                 <th scope="row"><?= $film->id ?></th>
-                <td><?= $film->nomfilm . ' (' . $film->anneereal . ')' ?></td>
+                <td><a href="index.php?p=film&id=<?= $film->id ?>"><?= $film->nomfilm . ' (' . $film->anneereal . ')' ?></a></td>
                 <td><?= $film->nomreal . ' ' . $film->prenomreal ?></td>
                 <td><?= $film->nomgenre ?></td>
                 <td>
@@ -50,10 +50,13 @@ $title = 'Gestion des films';
                     ?>
                 </td>
                 <td>
-                    <form action="index.php?p=deletefilms&id=<?= $film->id ?>" method="post" onsubmit="return confirm('Voulez vraiment effectuer cette action?')">
+                <div class="d-flex">
+                <a href="index.php?p=updatefilms&id=<?= $film->id ?>" class="btn btn-dark mr-1">Edit</a>
+                <form action="index.php?p=deletefilms&id=<?= $film->id ?>" method="post" onsubmit="return confirm('Voulez vraiment effectuer cette action?')">
                         <button type="submit" class="btn btn-danger">Supprimer</button>
                     </form>
-                    <a href="index.php?p=updatefilms&id=<?= $film->id ?>" class="btn btn-dark">Edit</a>
+                </div>
+
                 </td>
             </tr>
         <?php endforeach ?>

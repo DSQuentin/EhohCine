@@ -6,6 +6,9 @@ DA SILVA Quentin <br>
 GOMES Bruno <br>
 GRONEAU Benoit <br>
 
+### Lien du gitlab :
+https://gitlab.com/brunooo/ehohcine
+
 ### Sujet : Films
 On veut réaliser une application de gestion d’une collection de films ou séries en PHP. Cette application ne
 demande pas d’authentification mais doit permettre de : <br>

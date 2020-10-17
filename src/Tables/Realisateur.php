@@ -29,19 +29,21 @@ class Realisateur extends Database{
         $req->execute([$id]);
         return $req->fetch();
     }
-
-    public function insertReal($nomreal, $prenomreal, $naissancereal, $biographie, $urlphoto)
+    
+    public function updateReal($id,$nomreal, $prenomreal, $naissancereal, $biographie, $urlphoto)
     {
         $query =
-            "INSERT INTO realisateur (nomreal, prenomreal, naissancereal, biographie, urlphoto)
-            values (:nomreal, :prenomreal, :naissancereal, :biographie, :urlphoto)";
+            "UPDATE realisateur (nomreal, prenomreal, naissancereal, biographie, urlphoto)
+            set nomreal = :nomreal, prenomreal = :prenomreal, naissancereal = :naissancereal, biographie = :biographie, urlphoto = :urlphoto
+            WHERE id = :id";
         $req = $this->getPDO()->prepare($query);
         $req->execute([
-            'nomreal' => $nomreal,
-            'prenomreal' => $prenomreal,
-            'naissancereal' => $naissancereal,
-            'biographie' => $biographie,
-            'urlphoto' => $urlphoto
+            ':nomreal' => $nomreal,
+            ':prenomreal' => $prenomreal,
+            ':naissancereal' => $naissancereal,
+            ':biographie' => $biographie,
+            ':urlphoto' => $urlphoto,
+            ':id' => $id
         ]);
     }
 

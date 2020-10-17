@@ -27,7 +27,7 @@ $title = 'Ehoh Ciné | ' . $real->nomreal;
     </div>
 </div>
 <div class="container p-4 mt-5">
-    <h1>Productions</h1>
+    <h1>Autre productions de <?= $real->nomreal . ' ' . $real->prenomreal ?></h1>
     <div class="row">
         <?php foreach ($listefilm as $film): ?>
             <div class="col-md-3 mt-4">
@@ -39,7 +39,18 @@ $title = 'Ehoh Ciné | ' . $real->nomreal;
                         <h5 class="card-title"><?= $film->nomfilm ?> (<?= $film->anneereal ?>)</h5>
                         <p class="card-text"><?= $film->nomreal . ' ' . $film->prenomreal ?></p>
                         <p class="card-text font-italic"><?= $film->nomgenre ?></p>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">
+                        <?php
+                                        $string = $film->synopsis;
+                                        $max = 110;
+                                        if(strlen($string) > $max) {
+                                            // find the last space < $max:
+                                            $shorter = substr($string, 0, $max+1);
+                                            $string = substr($string, 0, strrpos($shorter, ' ')).' ...';
+                                        }
+                                        echo $string;
+                                        ?>
+                        </p>
                         <div class="d-flex justify-content-end">
                             <a href="index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
                         </div>
