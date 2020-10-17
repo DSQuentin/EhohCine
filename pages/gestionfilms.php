@@ -15,7 +15,11 @@ $title = 'Gestion des films';
     <h1 class="mb-5">GESTION FILMS</h1>
 
     <?php if(isset($_GET['delete']) && $_GET['delete'] === '1'): ?>
+        <p class="alert alert-success">Votre film a bien été supprimé !</p>
+    <?php elseif (isset($_GET['delete']) && $_GET['delete'] === '2'): ?>
         <p class="alert alert-success">Votre réalisateur a bien été supprimé !</p>
+    <?php elseif (isset($_GET['delete']) && $_GET['delete'] === '3'): ?>
+        <p class="alert alert-success">Votre genre a bien été supprimé !</p>
     <?php endif ?>
 
     <table class="table">

@@ -32,6 +32,12 @@ if ($p === 'home') {
     require '../pages/deletefilms.php';
 } elseif ($p === 'gestionreals'){
     require '../pages/gestionreals.php';
+} elseif ($p === 'deletereals'){
+    require '../pages/deletereals.php';
+} elseif ($p === 'gestiongenres'){
+    require '../pages/gestiongenres.php';
+}elseif ($p === 'deletegenres') {
+    require '../pages/deletegenres.php';
 }
 
 $content = ob_get_clean();
