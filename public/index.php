@@ -30,6 +30,8 @@ if ($p === 'home') {
     require '../pages/creategenre.php';
 } elseif ($p === 'deletefilms'){
     require '../pages/deletefilms.php';
+} elseif ($p === 'gestionreals'){
+    require '../pages/gestionreals.php';
 }
 
 $content = ob_get_clean();
