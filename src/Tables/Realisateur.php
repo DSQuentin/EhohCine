@@ -9,7 +9,7 @@ class Realisateur extends Database{
     public function findAll()
     {
         $query =
-            "SELECT id, nomreal, prenomreal
+            "SELECT id, nomreal, prenomreal, naissancereal, biographie, urlphoto
                     FROM realisateur";
         $req = $this->getPDO()->prepare($query);
         $req->execute();
@@ -43,6 +43,15 @@ class Realisateur extends Database{
             'biographie' => $biographie,
             'urlphoto' => $urlphoto
         ]);
+    }
+
+    public function deleteReal($id)
+    {
+        $query =
+            "DELETE FROM realisateur
+            where id = $id";
+        $req = $this->getPDO()->prepare($query);
+        $req->execute();
     }
 
 }

@@ -32,6 +32,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/public/index.php?p=gestionfilms">Gestion des films</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/index.php?p=gestionreals">Gestion des realisateurs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/index.php?p=gestiongenres">Gestion des genres</a>
+                </li>
             </ul>
         </div>
         <?php if (isset($_GET['p']) && ($_GET['p'] === 'listefilms' || $_GET['p'] === 'gestionfilms')): ?>
