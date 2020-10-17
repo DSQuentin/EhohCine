@@ -26,13 +26,4 @@ class Genre extends Database{
             'nomgenre' => $nomgenre
         ]);
     }
-
-    public function deleteGenre($id)
-    {
-        $query =
-            "DELETE FROM genre
-            where id = $id";
-        $req = $this->getPDO()->prepare($query);
-        $req->execute();
-    }
 }
