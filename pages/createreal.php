@@ -16,7 +16,6 @@ $listegenres = $genres->findAll();
 $reals = new Realisateur();
 $listereals = $reals->findAll();
 
-var_dump($_POST);
 
 if (isset($_POST['nomreal']) && isset($_POST['prenomreal']) && isset($_POST['naissancereal']) && isset($_POST['biographie']) && isset($_POST['urlphoto'])){
     $reals->insertReal($_POST['nomreal'],$_POST['prenomreal'], $_POST['naissancereal'], $_POST['biographie'], $_POST['urlphoto'] );

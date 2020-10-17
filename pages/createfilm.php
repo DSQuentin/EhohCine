@@ -16,7 +16,8 @@ $listegenres = $genres->findAll();
 $reals = new Realisateur();
 $listereals = $reals->findAll();
 
-var_dump($listereals);
+var_dump($_POST);
+
 
 if (isset($_POST['nomfilm']) && isset($_POST['annereal']) &&
     isset($_POST['synopsis']) && isset($_POST['nomgenre']) &&

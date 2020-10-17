@@ -14,7 +14,7 @@ class Database {
     private $db_host;
     protected $pdo;
 
-    public function __construct($db_name = 'projetcine', $db_user = 'root', $db_pass = 'root', $db_host = 'localhost')
+    public function __construct($db_name = 'DBdasilva', $db_user = 'dasilva', $db_pass = 'dasilva', $db_host = 'servinfo-mariadb')
     {
         $this->db_name = $db_name;
         $this->db_user = $db_user;

@@ -12,9 +12,12 @@ $listefilm = $films->findByRealId($_GET['id']);
 
 $reals = new Realisateur();
 $real = $reals->findRealById($_GET['id']);
+
+$title = 'Ehoh Ciné | ' . $real->nomreal;
+
 ?>
 <div class="container d-flex bg-light rounded p-4 shadow-sm">
-    <img class="w-25 rounded shadow-sm" src="<?= $real->urlphoto ?>" alt="<?= $real->nomreal . ' ' . $real->prenomreal ?>">
+    <img class="rounded shadow-sm" src="<?= $real->urlphoto ?>" alt="<?= $real->nomreal . ' ' . $real->prenomreal ?>" style="height: 350px">
     <div class="ml-4">
         <h1><?= $real->nomreal . ' ' . $real->prenomreal ?></h1>
         <p class="font-italic">Année de naissance : <?= $real->naissancereal ?></p>

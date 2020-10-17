@@ -9,6 +9,7 @@ Autoloader::register();
 $films = new Film();
 $listefilms = $films->findAll();
 
+$title = 'Gestion des films';
 ?>
 <div class="container mb-5">
     <h1>GESTION FILMS</h1>

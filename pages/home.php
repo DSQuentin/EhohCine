@@ -28,7 +28,18 @@ $films = $test->find3Last();
                         <div class="card-body">
                             <h5 class="card-title"><?= $film->nomfilm ?> (<?= $film->anneereal ?>)</h5>
                             <p class="card-text"><?= $film->nomreal . ' ' . $film->prenomreal ?></p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">
+                            <?php
+                                $string = $film->synopsis;
+                                $max = 130; // or 200, or whatever
+                                if(strlen($string) > $max) {
+                                    // find the last space < $max:
+                                    $shorter = substr($string, 0, $max+1);
+                                    $string = substr($string, 0, strrpos($shorter, ' ')).' ...';
+                                }
+                                echo $string;
+                                ?>
+                            </p>
                             <div class="d-flex justify-content-end">
                                 <a href="/public/index.php?p=film&id=<?= $film->id ?>" class="btn btn-dark">En savoir plus</a>
                             </div>
