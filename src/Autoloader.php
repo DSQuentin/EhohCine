@@ -1,6 +1,7 @@
 <?php
 namespace App;
 
+//Cette classe permet d'éviter la répétition des require
 class Autoloader{
 
     /*

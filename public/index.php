@@ -5,40 +5,43 @@ use App\Autoloader;
 require_once '../src/Autoloader.php';
 Autoloader::register();
 
+//Affecte la valeure 'home' si p n'a pas de valeur
 if (isset($_GET['p'])){
     $p = $_GET['p'];
 } else {
     $p = 'home';
 }
 
+//En fonction de la valeur de p, on charge la page nécessaire, cela permet de faire un mini router pour avoir une URL un peu plus compréhensible
+//Cela permet aussi de ne pas avoir a modifié tous les liens dans les fichiers HTML. Si on veut changer un lien on le fait ici, c'est mieux centralisé
 ob_start();
 if ($p === 'home') {
     require '../pages/home.php';
 } elseif ($p === 'film') {
-    require '../pages/film.php';
+    require '../pages/films/film.php';
 } elseif ($p === 'listefilms') {
-    require '../pages/listefilms.php';
+    require '../pages/films/listefilms.php';
 } elseif ($p === 'gestionfilms') {
-    require '../pages/gestionfilms.php';
+    require '../pages/films/gestionfilms.php';
 } elseif ($p === 'realisateur'){
-    require '../pages/realisateurs.php';
+    require '../pages/reals/realisateurs.php';
 } elseif ($p === 'createfilm') {
-    require '../pages/createfilm.php';
+    require '../pages/films/createfilm.php';
 } elseif ($p === 'createreal'){
-    require '../pages/createreal.php';
+    require '../pages/reals/createreal.php';
 } elseif ($p === 'creategenre'){
-    require '../pages/creategenre.php';
+    require '../pages/genres/creategenre.php';
 } elseif ($p === 'deletefilms'){
-    require '../pages/deletefilms.php';
+    require '../pages/films/deletefilms.php';
 } elseif ($p === 'gestionreals'){
-    require '../pages/gestionreals.php';
+    require '../pages/reals/gestionreals.php';
 } elseif ($p === 'deletereals'){
-    require '../pages/deletereals.php';
+    require '../pages/reals/deletereals.php';
 } elseif ($p === 'gestiongenres'){
-    require '../pages/gestiongenres.php';
+    require '../pages/genres/gestiongenres.php';
 }elseif ($p === 'deletegenres') {
-    require '../pages/deletegenres.php';
+    require '../pages/genres/deletegenres.php';
 }
-
 $content = ob_get_clean();
+
 require '../pages/templates/default.php';

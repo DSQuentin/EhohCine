@@ -40,6 +40,7 @@ $films = $test->find3Last();
                             <p class="card-text font-italic"><?= $film->nomgenre ?></p>
                             <p class="card-text">
                             <?php
+                                //Cette fonction permet de réduire le synopsis pour qu'il rentre bien dans la card, ainsi tout n'est pas affiché directement
                                 $string = $film->synopsis;
                                 $max = 130; // or 200, or whatever
                                 if(strlen($string) > $max) {
